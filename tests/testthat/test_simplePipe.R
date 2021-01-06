@@ -37,22 +37,22 @@ test_that("Pipe working on example task", {
   task <- TaskClassif$new(id = "test", backend = test_set, target = "Class")
 
 
-
+  set.seed(1)
   # Mean
   expect_equal(PipeOpMean_B$new()$train(list(task))[[1]]$missings(), c("Class" = 0, "Petal.Length" = 0, "Petal.Width" = 0, "Sepal.Width" = 0, "Species" = 50, "Sepal.Length" = 0))
-
+  set.seed(1)
   # Mode
   expect_equal(PipeOpMode_B$new()$train(list(task))[[1]]$missings(), c("Class" = 0, "Petal.Length" = 0, "Petal.Width" = 0, "Sepal.Width" = 0, "Sepal.Length" = 0, "Species" = 0))
-
+  set.seed(1)
   # Median
   expect_equal(PipeOpMedian_B$new()$train(list(task))[[1]]$missings(), c("Class" = 0, "Petal.Length" = 0, "Petal.Width" = 0, "Sepal.Width" = 0, "Species" = 50, "Sepal.Length" = 0))
-
+  set.seed(1)
   # OOR
   expect_equal(PipeOpOOR_B$new()$train(list(task))[[1]]$missings(), c("Class" = 0, "Petal.Length" = 0, "Petal.Width" = 0, "Sepal.Width" = 0, "Sepal.Length" = 0, "Species" = 0))
-
+  set.seed(1)
   # HIST
   expect_equal(PipeOpHist_B$new()$train(list(task))[[1]]$missings(), c("Class" = 0, "Petal.Length" = 0, "Petal.Width" = 0, "Sepal.Width" = 0, "Species" = 50, "Sepal.Length" = 0))
-
+  set.seed(1)
   # Smaple
   expect_equal(PipeOpSample_B$new()$train(list(task))[[1]]$missings(), c("Class" = 0, "Petal.Length" = 0, "Petal.Width" = 0, "Sepal.Width" = 0, "Sepal.Length" = 0, "Species" = 0))
 })

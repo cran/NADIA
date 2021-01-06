@@ -27,7 +27,7 @@ Identifier of resulting object, default `"impute_hist_B"`.
 
   graph <- PipeOpHist_B$new() \%>>\%  LearnerClassifDebug$new()
   graph_learner <- GraphLearner$new(graph)
-
+  set.seed(1)
   resample(tsk("pima"), graph_learner, rsmp("cv", folds = 3))
 }
 }

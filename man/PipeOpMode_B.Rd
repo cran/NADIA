@@ -28,7 +28,7 @@ Identifier of resulting object, default `"impute_mode_B"`.
   graph_learner <- GraphLearner$new(graph)
 
   # Task with NA
-
+   set.seed(1)
   resample(tsk("pima"), graph_learner, rsmp("cv", folds = 3))
 }
 }

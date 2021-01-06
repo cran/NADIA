@@ -22,13 +22,11 @@
 #'   graph_learner <- GraphLearner$new(graph)
 #'
 #'   # Task with NA
-#'
+#'    set.seed(1)
 #'   resample(tsk("pima"), graph_learner, rsmp("cv", folds = 3))
 #' }
 #' @importFrom data.table .N
 #' @export
-
-
 PipeOpMode_B = R6::R6Class("Mode_B_imputation",
   inherit = PipeOpImpute,
   public = list(
