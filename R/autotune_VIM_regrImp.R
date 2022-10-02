@@ -84,7 +84,7 @@ autotune_VIM_regrImp <- function(df, col_type=NULL, percent_of_missing=NULL, col
     int_col_names <- c()
     # Converting integer to numeric
     final <- lapply(df, function(x) {
-      if (class(x) == "integer") {
+      if ( inherits(x,"integer")) {
         return(as.numeric(x))
 
       }

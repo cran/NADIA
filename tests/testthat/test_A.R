@@ -38,7 +38,7 @@ test_that("Testing mice A methods", {
 
 
 test_that("Testing missMDA in A approach",{
-
+  skip_on_cran()
   ###  Creating Pipe
   expect_is(PipeOpMissMDA_PCA_MCA_FMAD_A$new(), "PipeOpImpute")
 

@@ -125,7 +125,7 @@ resample(tsk("pima"),Learner,rsmp("cv",folds=5))$errors
 
 
 **Callr** package allows you to run every fold in a separate session. This can be used exactly like **evaluate** but in some cases is more powerful. For large data frames (over 100000 rows) packages like **mice** and **Amelia** can sometimes crash the entire R session. In that situation, tryCatch or **evaluate** isn't enough and you need to use **caller**.
-It can be quite tricky to correctly pass seeds to **callr** session in detail is best to check [mlr3 book](https://mlr3book.mlr-org.com/error-handling.html).
+It can be quite tricky to correctly pass seeds to **callr** session.
 
 
 This is how **callr** can be used (in this case we don't simulate the session crash because it will be hard to achieve reliably on every machine):

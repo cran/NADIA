@@ -111,7 +111,7 @@ autotune_Amelia <- function(df, col_type=NULL, percent_of_missing=NULL, col_0_1 
       }
     }
     # Avoiding situtation when amelia dont impute and dont throwe errors            c
-    if (class(final) != "data.frame" & class(final) != "amelia") {
+    if (!inherits(final,"data.frame")  & !inherits(final,"amelia") ) {
       stop("ERROR no error msg")
     }
   }, error = function(e) {

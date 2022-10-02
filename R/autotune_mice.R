@@ -263,7 +263,7 @@ autotune_mice <- function(df, m = 5, maxit = 5, col_miss=NULL, col_no_miss=NULL,
 
     }
     if (is.null(methode)) {
-      if (class(df[, index_y]) == "factor") {
+      if (inherits(df[, index_y],"factor")) {
         if (length(levels(df[, index_y])) == 2) {
           function_to_impute <- mice::mice.impute.logreg
         }
@@ -271,7 +271,7 @@ autotune_mice <- function(df, m = 5, maxit = 5, col_miss=NULL, col_no_miss=NULL,
           function_to_impute <- mice::mice.impute.polyreg
         }
       }
-      if (class(df[, index_y]) == "order") {
+      if (inherits(df[, index_y],"order")) {
         function_to_impute <- mice::mice.impute.polr
       }
       if (methods::is(df[, index_y], "numeric")) {
@@ -284,7 +284,7 @@ autotune_mice <- function(df, m = 5, maxit = 5, col_miss=NULL, col_no_miss=NULL,
     #### Prepering data frame
     df_n <- df
     df_n <- lapply(df_n, function(x) {
-      if (class(x) == "factor") {
+      if (inherits(x,"factor")) {
         return(as.integer(x))
       }
       return(x)
